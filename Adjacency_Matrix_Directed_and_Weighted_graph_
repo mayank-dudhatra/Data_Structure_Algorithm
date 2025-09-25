@@ -1,0 +1,40 @@
+//  Adjacency Matrix for Directed and Weighted graph:
+
+#include <iostream>
+#include <vector>
+#include <tuple>
+using namespace std;
+
+int main() {
+    int vertice = 5; 
+    int edge = 3;  
+    
+   
+    vector<vector<int>> adjmet(vertice, vector<int>(vertice, 0));
+
+   
+    vector<tuple<int,int,int>> edges = {
+        {0,1,4},   
+        {1,2,7},   
+        {3,4,2}    
+    };
+
+    
+    for (auto e : edges) {
+        int u, v, w;
+        tie(u, v, w) = e;
+        adjmet[u][v] = w;
+       
+    }
+
+
+    cout << "Adjacency Matrix (Undirected & Weighted):" << endl;
+    for (int i = 0; i < vertice; i++) {
+        for (int j = 0; j < vertice; j++) {
+            cout << adjmet[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}

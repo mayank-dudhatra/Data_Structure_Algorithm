@@ -14,7 +14,7 @@ public:
     }
 };
 
-// Function to insert a node (outside the class)
+
 Node* insertion(Node* root, int k) {
     if (root == nullptr) {
         return new Node(k);
